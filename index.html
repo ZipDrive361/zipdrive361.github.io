@@ -80,6 +80,75 @@
       border-top: 1px solid #30363d;
       margin-top: 3rem;
     }
+/* ===== SITE STRUCTURE & TERMINAL VIBE ===== */
+
+section {
+  margin: 5rem auto;
+  padding: 3rem 1.5rem;
+  max-width: 1000px;
+  position: relative;
+}
+
+section::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-bottom: 3rem;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #30363d,
+    transparent
+  );
+}
+
+section h2 {
+  font-family: monospace;
+  font-size: 1.6rem;
+  color: #58a6ff;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+section p {
+  color: #c9d1d9;
+  line-height: 1.7;
+  max-width: 800px;
+}
+
+.card {
+  border-left: 2px solid #30363d;
+  transition: border-color 0.3s ease;
+}
+
+.card:hover {
+  border-left-color: #58a6ff;
+}
+
+/* Terminal-style subtle accent */
+.terminal-accent {
+  font-family: monospace;
+  color: #8b949e;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Optional: faint scanline feel */
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 0.15;
+}
   </style>
 </head>
 <body>
