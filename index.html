@@ -153,6 +153,114 @@
   <footer>
     <p>© 2026 Cory Wright | Built for Cybersecurity Recruiting</p>
   </footer>
+<section id="osint-challenge">
+  <h2>OSINT Analyst Mini-Challenge</h2>
+  <p>
+    This is a simulated, ethical OSINT challenge designed to demonstrate
+    analytical thinking, signal-vs-noise evaluation, and DevSecOps mindset.
+  </p>
+
+  <div class="card" style="background:#0b0f14;font-family:monospace;">
+    <p>> OSINT Console Initialized</p>
+    <p>> Confidence Score: <span id="confidence">0%</span></p>
+    <p>> Time Elapsed: <span id="timer">0</span>s</p>
+    <hr>
+    <div id="terminal-log"></div>
+  </div>
+
+  <div class="card">
+    <h3>Phase 1 — Analyst Assessment</h3>
+    <p>
+      Indicators:
+    </p>
+    <ul>
+      <li>GitHub: zipdrive361 (automation + security tooling)</li>
+      <li>Portfolio hosted on GitHub Pages</li>
+      <li>Background in platform stability and testing</li>
+    </ul>
+
+    <p><strong>Question:</strong> What domain best fits this profile?</p>
+
+    <select id="answer">
+      <option value="">Select one</option>
+      <option value="SOC">SOC Analyst</option>
+      <option value="DevSecOps">DevSecOps Engineer</option>
+      <option value="Forensics">Digital Forensics</option>
+      <option value="GRC">GRC</option>
+    </select>
+
+    <br><br>
+    <button onclick="submitAnswer()">Submit Assessment</button>
+    <button onclick="falseLead()">Investigate Alternate Source</button>
+    <button onclick="useHint()">Request Hint (-10%)</button>
+  </div>
+
+  <div class="card">
+    <h3>Final Analyst Summary</h3>
+    <p id="final"></p>
+  </div>
+</section>
+
+<script>
+  let confidence = 0;
+  let time = 0;
+  let hintUsed = false;
+
+  const log = (msg) => {
+    document.getElementById("terminal-log").innerHTML += `<p>> ${msg}</p>`;
+  };
+
+  setInterval(() => {
+    time++;
+    document.getElementById("timer").innerText = time;
+    if (time === 30) log("Analysis delay detected. Consider reassessing sources.");
+  }, 1000);
+
+  function updateConfidence(val) {
+    confidence = Math.min(100, Math.max(0, confidence + val));
+    document.getElementById("confidence").innerText = confidence + "%";
+  }
+
+  function submitAnswer() {
+    const a = document.getElementById("answer").value;
+    if (a === "DevSecOps") {
+      updateConfidence(40);
+      log("Assessment aligned with evidence.");
+      finalize();
+    } else {
+      updateConfidence(-10);
+      log("Assessment weakly supported. Possible misclassification.");
+    }
+  }
+
+  function falseLead() {
+    updateConfidence(-5);
+    log("Alternate source suggests SOC focus. Confidence low. Possible false signal.");
+  }
+
+  function useHint() {
+    if (!hintUsed) {
+      hintUsed = true;
+      updateConfidence(-10);
+      log("Hint: Look where automation and security intersect.");
+    }
+  }
+
+  function finalize() {
+    if (confidence >= 60) {
+      document.getElementById("final").innerHTML = `
+        <strong>What This Demonstrates About Me</strong><br><br>
+        • Ethical OSINT methodology<br>
+        • Signal vs noise evaluation<br>
+        • Confidence-based decision making<br>
+        • DevSecOps thinking rooted in reliability engineering<br><br>
+        I approach security as an engineer — evidence-driven,
+        automation-focused, and responsible.
+      `;
+      log("Final assessment unlocked. Analyst confidence sufficient.");
+    }
+  }
+</script>
 
 </body>
 </html>
