@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cory Wright | Cybersecurity Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+    }
+    header {
+      padding: 2rem;
+      background: #161b22;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+    header p {
+      color: #9da7b1;
+      margin-top: 0.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      background: #0d1117;
+      border-bottom: 1px solid #30363d;
+    }
+    nav a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h2 {
+      border-bottom: 2px solid #30363d;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #161b22;
+      padding: 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #58a6ff;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #c9d1d9;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 0.8rem;
+      color: #3fb950;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #8b949e;
+      border-top: 1px solid #30363d;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cory Wright</h1>
+    <p>Cybersecurity | Platform Stability | Offensive Security</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#github">GitHub</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a Platform Stability / Testing Engineering Specialist with hands-on experience
+      in log analysis, AV systems, Linux, scripting, and cybersecurity fundamentals.
+      I’m currently pursuing a BS in Information Technology with a focus on Cybersecurity
+      and building offensive and defensive security projects.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Cybersecurity Projects</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Log Analysis Toolkit</h3>
+        <p>Python-based tools for parsing CAN, system, and scenario logs for incident investigation.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="card">
+        <h3>Home Security Lab</h3>
+        <p>Raspberry Pi + Linux lab covering networking, SIEM basics, and attack simulation.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="card">
+        <h3>OSINT Research</h3>
+        <p>Legal OSINT techniques using public data, automation, and analysis workflows.</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="github">
+    <h2>GitHub Repositories</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>drive-log-gui</h3>
+        <p>GUI-based tool for organizing and reviewing autonomous vehicle logs.</p>
+        <a href="https://github.com/yourusername/drive-log-gui" target="_blank">GitHub</a>
+      </div>
+      <div class="card">
+        <h3>security-labs</h3>
+        <p>Hands-on labs for Security+, Linux hardening, and network fundamentals.</p>
+        <a href="https://github.com/yourusername/security-labs" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <strong>mr.cornieluswright@yahoo.com</strong></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com" target="_blank">linkedin.com/in/your-profile</a></p>
+  </section>
+
+  <footer>
+    <p>© 2026 Cory Wright | Built for Cybersecurity Recruiting</p>
+  </footer>
+
+</body>
+</html>
