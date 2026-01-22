@@ -195,6 +195,48 @@ body::after {
       </div>
     </div>
   </section>
+<div class="card">
+  <h3>AI Analyst Assistant (Simulated)</h3>
+  <p class="terminal-accent">> role: decision_support | mode: human_in_loop</p>
+
+  <p>
+    This assistant simulates how an AI system would support a DevSecOps engineer
+    by summarizing signals, highlighting uncertainty, and recommending next steps
+    without automating decisions.
+  </p>
+
+  <button onclick="runAssistant()">Request Analyst Brief</button>
+
+  <div id="assistant-output" style="margin-top:1rem;font-family:monospace;"></div>
+</div>
+
+<script>
+  function runAssistant() {
+    const output = document.getElementById("assistant-output");
+
+    const signals = [
+      { name: "Secrets detected in commit", severity: "high", confidence: 0.9 },
+      { name: "Authentication failures increased", severity: "medium", confidence: 0.6 },
+      { name: "CPU usage anomaly", severity: "low", confidence: 0.3 }
+    ];
+
+    output.innerHTML = "> compiling_signal_summary()<br><br>";
+
+    signals.forEach(s => {
+      output.innerHTML += `
+        > signal="${s.name}"<br>
+        > severity=${s.severity}<br>
+        > confidence=${Math.round(s.confidence * 100)}%<br><br>
+      `;
+    });
+
+    output.innerHTML += `
+      > assessment="Risk present, confidence uneven across signals."<br>
+      > recommendation="Escalate secrets exposure immediately. Monitor authentication behavior before action."<br>
+      > note="Human review required. AI confidence not sufficient for automated response."<br>
+    `;
+  }
+</script>
 
   <section id="github">
     <h2>GitHub Repositories</h2>
